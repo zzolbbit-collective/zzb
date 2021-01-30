@@ -1,0 +1,338 @@
+.musicUI{
+	width: 100vw; height: 100%;
+}
+
+
+/*Search Toggle Btn*/
+.mUopenAndClose{
+	position: fixed; top: 14px; right: 26px;
+	z-index: 9998;
+	cursor: pointer;
+}
+
+.mUopenAndClose img{
+	height: 32px; 
+	transition: transform 0.3s ease-in-out;
+}
+.mUopenAndClose.active img{
+	transform: scaleX(-1);
+}
+
+
+/* Search Song Container(grid) */
+.mUContainer{
+	position: fixed; top: 0; right: 0;
+	width: 100vw; height: 100%;
+	font-size: 17px; font-weight: 400; color: white; 
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
+	z-index: 9997;
+	transform: translateX(0); transition: transform 0.8s;
+	/* grid */
+	display: grid;
+	grid-template-rows: 56px 1fr auto;
+	grid-template-columns: 1fr;
+}
+.mUContainer.active{
+	transform: translateX(100%);
+}
+
+.mUContainer .background{
+	position: absolute;
+	width: 100%; height: 100%;
+	/* background-image: url(../img/m_SlideImage12.jpg);
+	background-position: center right;
+	background-repeat: no-repeat;
+	background-size: cover;
+	*/
+	opacity: 0.8;
+	transition: opacity 0.6s; 
+	background-color: rgba(45, 45, 45, 0.84);
+	z-index: -1;
+}
+.mUContainer.active .background{
+	opacity: 0;
+}
+
+
+/* Search Bar */
+.muSearchBar{
+	width: 100%;
+	display: flex; 
+	justify-content: flex-start; align-items: center;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.mUsearchBox{
+	margin-left: 10px;
+	padding: 0px 6px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 50px;
+	border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.mUsearchBox input{
+	height: 34px;
+	padding-left: 4px;
+	width: 16vw;
+	color: white;
+	font-size: 20px; font-weight: 300;
+	transition: width 0.6s;
+}
+
+.mUsearchBox input:focus{
+	width: 36vw;
+}
+
+.mUsearchBox input::placeholder{
+	color: white;
+}
+.mUsearchBox img{
+	width: 22px; height: auto;
+	transform: translateY(1px);
+	cursor: pointer;
+}
+
+.mUmenuListBtn{
+	display: flex;
+	justify-content: center; align-items: center;
+	margin-left: 12px;
+	cursor: pointer;
+}
+
+.mUmenuListBtn img{
+	width: 32px;
+}
+
+/* mUmenuList  */
+.mUmenuList{
+	position: absolute;
+	top: 56px;
+	height: calc(100% - 56px); width: 100%;
+	display: flex; flex-direction: column;
+	justify-content: center; align-items: center;
+	background-color: rgba(30, 30, 30, 0.9);
+	transition: height 0.6s;
+	overflow: hidden;
+}
+
+.mUmenuListDummy{
+	display: none;
+}
+
+.mUmenuList.active{
+	height: 0;
+}
+
+.menuListTop{
+	display: flex; flex-direction: row;
+	justify-content: center; align-items: center;
+}
+
+.mUmenuList img{
+	height: 45px;
+	width: auto;
+	margin-bottom: 6px;
+}
+
+.playListMusic, .randomMusic, .admimMusic{
+	display: flex; flex-direction: column;
+	justify-content: center; align-items: center;
+	cursor: pointer;
+}
+
+.playListMusic{
+	margin-right: 7vw;
+}
+
+.admimMusic{
+	margin-top: 30px;
+}
+
+.mUmenuList p{
+	width: fit-content;
+	padding: 1px 8px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border: 2px solid rgba(255, 255, 255, 0.8);
+	border-radius: 14px;
+}
+
+
+
+/* Youtube Search Result */
+.ytResultContainer{
+	width: 100%;
+	padding-right: 5%; padding-left: 6%;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+	width: 3px;
+}
+
+::-webkit-scrollbar-track {
+	opacity: 0;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+    background: rgba(255, 255, 255, 0.555);
+}
+
+.ytResult{
+	border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.ytContent{
+	width: 100%; 
+	/* 부모태그가 100%을 가지고 padding값을 가지면 자식태그의 100%는 부모태그의 100%에서 padding값을 뺀 값임 */
+	padding: 16px 0px;
+	display: flex; flex-direction: row;
+}
+
+.ytThumnail{
+	width: 90px; height: 90px;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	margin-right: 20px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	overflow: hidden;
+}
+
+.ytThumnail img{
+	width: inherit; height: inherit;
+	object-fit: cover;
+}
+
+
+.ytInfo{
+	width: calc(100% - 110px);
+	display: flex; flex-direction: column;
+	justify-content: center;
+
+}
+.ytInfo p{
+	overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+
+.ytAccessBtn{
+	text-align: end;
+	height: 0;
+	overflow: hidden;
+	transition: height 0.4s;
+	
+}
+
+.ytAccessBtn.active{
+	height: 32px;
+}
+
+.ytAccessBtn p{
+	display: inline-block;
+	height: 32px;
+	color: white;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 8px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	padding: 3px 8px;
+	cursor: pointer;
+	margin-left: 3px;
+}
+
+
+.ytVideoPlayer{
+	position: fixed; 
+	bottom: 3vh; left: 3vw;
+	border-radius: 50%;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	z-index: 9995;
+	overflow: hidden;
+}
+
+
+.mULogo{
+	display: flex; flex-direction: row;
+	justify-content: center; align-items: center;
+}
+.mULogo img{
+	padding: 15px 0;
+	width: 300px;
+}
+
+
+
+/* responsible web */
+@media all and (max-height: 300px){
+	.mUmenuList p{
+		padding: 0px 8px;
+		background-color: rgba(255, 255, 255, 0.2);
+		border: 2px solid rgba(255, 255, 255, 0.8);
+		border-radius: 14px;
+		cursor: pointer;
+	}
+	.mUmenuList img{
+		height: 35px;
+	}
+}
+
+@media all and (max-width: 300px){
+	.mULogo img{
+		width: 90%;
+	}
+}
+
+
+/* for pc web */
+@media all and (min-width: 768px){
+	.mUContainer{
+	width: 468px;
+	transform: translateX(0); transition: transform 0.8s;
+	}
+
+	.mUContainer.active{
+		transform: translateX(468px);
+	}
+
+	.playListMusic{
+		margin-right: 40px;
+	}
+
+	.mUsearchBox input{
+		width: 80px;
+	}
+	
+	.mUsearchBox input:focus{
+		width: 180px;
+	}
+
+	.ytResultContainer{
+		padding-right: 7%; padding-left: 8%;
+	}
+
+}
+
+
+@media all and (min-height: 768px){
+	.mUmenuList{
+		height: calc(50% - 56px);
+	}
+
+	.mUmenuList.active{
+		height: 0;
+	}
+
+	.mUmenuListDummy{
+		position: absolute;
+		display: block;
+		bottom: 0;
+		width: 100%; height: 50%;
+		background-color: rgba(30, 30, 30, 0.9);
+		transition: height 0.6s;
+	}
+	.mUmenuListDummy.active{
+		height: 0;
+	}
+}

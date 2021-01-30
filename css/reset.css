@@ -1,0 +1,21 @@
+/* 마진 패딩 초기화 */
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+/* 불릿기호 초기화 */
+dl, ul, li, ol, menu {list-style: none;}
+
+/* a 링크 초기화 */
+a {text-decoration: none; color: white;}
+
+/* 폰트 초기화 */
+body {font-family: 'Oswald', 'Malgun Gothic','맑은 고딕',dotum,'돋움', sans-serif;}
+
+/* 인풋 박스 초기화 */
+input{
+    background: none;
+    outline-style:none;
+    appearance: none;
+    border:none;
+    border-radius:0px 0px; 
+    font-family: 'Oswald', 'Malgun Gothic','맑은 고딕',dotum,'돋움', sans-serif;
+}
