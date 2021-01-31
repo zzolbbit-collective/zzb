@@ -8,7 +8,11 @@ dl, ul, li, ol, menu {list-style: none;}
 a {text-decoration: none; color: white;}
 
 /* 폰트 초기화 */
-body {font-family: 'Oswald', 'Malgun Gothic','맑은 고딕',dotum,'돋움', sans-serif;}
+body {
+    font-family: 'Oswald', 'Malgun Gothic','맑은 고딕',dotum,'돋움', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
 
 /* 인풋 박스 초기화 */
 input{
