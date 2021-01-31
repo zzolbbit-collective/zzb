@@ -1,11 +1,37 @@
 /* Global Menu */
-.globalMenu{ position: fixed; top: 0; left: 0;
-    z-index: 1;
+.logo{
+  position: fixed;
+  top: 12px; left: 12px;
+}
+
+.logo img{
+  width: 130px; height: auto;
 }
 
 .menuBtn{
-  position: fixed; top: 12px; left: 26px;
-  /* margin: 12px 12px; */
-  color: rgba(255, 255, 255, 0.85); font-size: 18px;
+  position: fixed;
+  top: 18px; right: 20px;
+  z-index: 1;
+  display: flex; flex-direction: row;
+  color: rgba(255, 255, 255, 0.85); font-size: 16px;
+}
+
+.menuBtn span{
+  display: none;
+}
+
+.menuBtn p{
+  margin-left: 40px;
   cursor: pointer;
+}
+
+
+@media ( max-width: 550px ) {
+
+  .menuBtn p{
+    display: none;
+  }
+  .menuBtn span{
+    display: unset;
+  }
 }
